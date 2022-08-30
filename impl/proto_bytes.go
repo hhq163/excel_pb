@@ -26,6 +26,7 @@ import (
 func ProtoToBytes(inputDir, outputDir string) {
 	log.Println("ProtoToBytes() in")
 
+	//删除目标文件夹已有的*.bytes
 	absPath, _ := filepath.Abs(excel_pb.GetExecpath() + "/" + outputDir)
 	err := filepath.Walk(absPath, func(path string, fi os.FileInfo, err error) error {
 		if nil == fi {
@@ -86,8 +87,8 @@ func ProtoToBytes(inputDir, outputDir string) {
 				continue
 			}
 
-			configStr := fmt.Sprintf("output.%sConfigData", fileName) //output.PaymentSettingsConfigData
-			dataStr := fmt.Sprintf("output.%s", fileName)             //output.PaymentSettings
+			configStr := fmt.Sprintf("output.%sConfigData", fileName) //output.TestSettingsConfigData
+			dataStr := fmt.Sprintf("output.%s", fileName)             //output.TestSettings
 			dataType := proto.MessageType(dataStr)
 			configType := proto.MessageType(configStr)
 			fmt.Println("111111111: ", dataStr, configStr, dataType, configType)

@@ -137,7 +137,7 @@ func ExcelToProto(inputDir, outputDir string, protoVer int32) {
 
 			fileData := genProtoContent(primaryKey, fileName, dataStr, 3)
 			outPath := excel_pb.GetExecpath() + "/" + outputDir + "/" + fileName + ".proto"
-			log.Println("outPath=", outPath)
+			// log.Println("outPath=", outPath)
 
 			_, err := os.Stat(outPath)
 			if err != nil { //文件不存在
