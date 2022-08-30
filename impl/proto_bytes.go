@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	"github.com/hhq163/excel_pb"
-	// _ "test.go/output"
+	_ "test.go/output"
 
 	"github.com/golang/protobuf/proto"
 	"github.com/tealeg/xlsx"
