@@ -9,9 +9,9 @@ import (
 
 //生成proto文件
 func GenProto(outPath string) {
-	protoStr := fmt.Sprintf("--proto_path=%s --gofast_out=%s %s/*.proto", outPath, outPath, outPath)
+	protoStr := fmt.Sprintf(" --proto_path=%s --gofast_out=%s %s/*.proto", outPath, outPath, outPath)
 	log.Println(protoStr)
-	cmd := exec.Command("protoc ", protoStr)
+	cmd := exec.Command("protoc", protoStr)
 
 	var out bytes.Buffer
 	var stderr bytes.Buffer
