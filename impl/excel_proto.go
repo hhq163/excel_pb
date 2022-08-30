@@ -1,13 +1,11 @@
 package impl
 
 import (
-	"bytes"
 	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strconv"
@@ -162,21 +160,23 @@ func ExcelToProto(inputDir, outputDir string, protoVer int32) {
 	}
 
 	outPath := excel_pb.GetExecpath() + "/" + outputDir
+
+	GenProto(outPath)
 	// outPath := "./" + outputDir
 
 	// cmd := exec.Command("protoc", fmt.Sprintf(" --proto_path=%s", outPath), fmt.Sprintf(" --gofast_out=%s", outPath), fmt.Sprintf(" %s/*.proto", outPath))
-	cmd := exec.Command("/bin/sh", "-c", fmt.Sprintf("protoc --proto_path=%s --gofast_out=%s %s/*.proto", outPath, outPath, outPath))
+	// cmd := exec.Command("/bin/sh", "-c", fmt.Sprintf("protoc --proto_path=%s --gofast_out=%s %s/*.proto", outPath, outPath, outPath))
 
-	var out bytes.Buffer
-	var stderr bytes.Buffer
-	cmd.Stdout = &out
-	cmd.Stderr = &stderr
-	err = cmd.Run()
-	if err != nil {
-		log.Fatalln("proto 生成工具出错, err=", err.Error(), ",stderr=", stderr.String())
-		fmt.Println("proto 生成工具出错 ", err.Error())
-		return
-	}
+	// var out bytes.Buffer
+	// var stderr bytes.Buffer
+	// cmd.Stdout = &out
+	// cmd.Stderr = &stderr
+	// err = cmd.Run()
+	// if err != nil {
+	// 	log.Fatalln("proto 生成工具出错, err=", err.Error(), ",stderr=", stderr.String())
+	// 	fmt.Println("proto 生成工具出错 ", err.Error())
+	// 	return
+	// }
 
 	log.Println("end")
 }

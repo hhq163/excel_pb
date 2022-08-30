@@ -1,3 +1,4 @@
 go.sum
 test.go.exe
 test.go
+*.log

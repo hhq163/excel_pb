@@ -1,0 +1,46 @@
+syntax = "proto3";
+package output;
+		
+// key:[""]
+message TestSettings {
+		int32 Key = 1;		//
+		int32 ID = 2;		//
+		string GiftsDesc = 3;		//描述
+		string BackstageName = 4;		//礼包名称(后台查看时使用)
+		repeated int32 LevelSection = 5;		//等级区间
+		repeated int32 VIPSection = 6;		//VIP区间
+		int32 RefreshType = 7;		//刷新类型
+		int32 NextKey = 8;		//下一礼包
+		int32 StayCycle = 9;		//停留周期
+		int32 BaseKey = 10;		//基础礼包
+		int32 ActivationType = 11;		//激活类型
+		int32 ActivationParameter = 12;		//激活参数
+		int32 ConflictType = 13;		//冲突类型
+		int32 Priority = 14;		//优先级
+		string GoogleID = 15;		//谷歌ID
+		string AppleID = 16;		//苹果ID
+		string FacebookID = 17;		//脸书ID
+		float USDollar = 18;		//美元价格
+		int32 RMB = 19;		//人民币价格
+		int32 VipExp = 20;		//vip经验
+		int32 GetDiamond = 21;		//立即得到金币
+		int32 GetItemCollection = 22;		//立即获得奖励
+		int32 PresentDiamond = 23;		//赠送金币
+		int32 PresentItemCollection = 24;		//赠送奖励
+		int32 EventGems = 25;		//累冲活动计数值
+		int32 Days = 26;		//天数
+		int32 ItemCollectionID = 27;		//奖励ID
+		int32 Quota = 28;		//限购数量
+		int32 RefreshTime = 29;		//刷新时间
+		string DisplayName = 30;		//名字（客户端）
+		string Description = 31;		//描述（客户端）
+		int32 Order = 32;		//排序（客户端）
+		int32 Rank = 33;		//档次（客户端）
+		int32 Label = 34;		//所在标签
+		string Icon = 35;		//图标（客户端）
+
+}
+		
+message TestSettingsConfigData{
+	repeated TestSettings config = 1;
+}
