@@ -2,7 +2,7 @@ module test.go
 
 go 1.17
 
-require github.com/hhq163/excel_pb v0.0.0-20220830065036-874d733afff6
+require github.com/hhq163/excel_pb v0.0.0-20220830071832-2809ae0dcc02
 
 require (
 	github.com/gogo/protobuf v1.3.2 // indirect
