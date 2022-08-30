@@ -16,7 +16,7 @@ func GetExecpath() string {
 }
 
 //获取文件名
-func getFileName(s string) string {
+func GetFileName(s string) string {
 	arr := strings.Split(s, "_")
 	fileName := arr[0]
 
@@ -24,7 +24,7 @@ func getFileName(s string) string {
 }
 
 //追加文件内容到末尾
-func appendToFile(fileName string, content string) error {
+func AppendToFile(fileName string, content string) error {
 	// 以只写的模式，打开文件
 	f, err := os.OpenFile(fileName, os.O_WRONLY, 0644)
 	defer f.Close()

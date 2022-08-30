@@ -73,7 +73,7 @@ func ExcelToProto(inputDir, outputDir string, protoVer int32) {
 		}
 
 		for key, sheet := range xlFile.Sheets {
-			fileName := excel_pb.getFileName(sheet.Name)
+			fileName := excel_pb.GetFileName(sheet.Name)
 
 			if fileName == "" {
 				fmt.Printf("sheet.Name is empty fileAllName=%s, key=%d", fileAllName, key)
@@ -150,10 +150,10 @@ func ExcelToProto(inputDir, outputDir string, protoVer int32) {
 				}
 
 			} else {
-				err = excel_pb.appendToFile(outPath, fileData)
+				err = excel_pb.AppendToFile(outPath, fileData)
 				if err != nil {
-					fmt.Println("appendToFile file error! outfile=", outPath)
-					log.Fatalln("appendToFile file error! outfile=", outPath, ", err=", err.Error())
+					fmt.Println("AppendToFile file error! outfile=", outPath)
+					log.Fatalln("AppendToFile file error! outfile=", outPath, ", err=", err.Error())
 				}
 			}
 

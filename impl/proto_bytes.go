@@ -66,7 +66,7 @@ func ProtoToBytes(inputDir, outputDir string) {
 		}
 
 		for key, sheet := range xlFile.Sheets {
-			fileName := excel_pb.getFileName(sheet.Name)
+			fileName := excel_pb.GetFileName(sheet.Name)
 
 			if fileName == "" {
 				fmt.Printf("sheet.Name is empty fileAllName=%s, key=%d", fileAllName, key)
